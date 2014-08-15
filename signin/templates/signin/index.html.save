@@ -1,0 +1,35 @@
+{% block title %}Newbold Neighbors Listing{% endblock %}
+
+{% block content %}
+{% if peopleList %}
+    <ul>
+    {% for person in peopleList %}
+        <li><a href="/signin/people/{{ person.id }}/">{{ person.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No people yet.</p>
+{% endif %}
+
+<h1>Add new people</h1>
+
+                <form name="theform" action="." method="post" id="theform">
+                    <div id="name_email">
+
+                        <label id="id_name">Name:</label>
+                        <input type="text" name="name" value="" id="name" />
+                        <label id="id_email">Email:</label>
+                        <input type="text" name="email" value="" id="Email" />
+                    </div><!-- end name_email -->
+                    <div id="message">
+                        <label id="id_message">Message:</label>
+                        <textarea name="message" rows="8" cols="37"></textarea>
+
+                    </div><!-- end message -->
+                    <div id="submit">
+                        <input type="image" src="http://path/to/submitbutton.png" onclick="YY_checkform('theform','name','#q','0','Field \'name\' is empty.','Email','#S','2','Field \'Email\' appears not to be valid.','message','2','1','Field \'message\' is empty.');return document.MM_returnValue" />
+                    </div><!-- end submit -->
+                    <input class="hidden" type="hidden" name="topic" value="Home : Contact Form Submission" id="subject" />
+                </form>
+
+{% endblock %}

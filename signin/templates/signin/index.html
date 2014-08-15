@@ -1,0 +1,16 @@
+{% block title %}Newbold Neighbors Listing{% endblock %}
+
+{% block content %}
+{% if peopleList %}
+    <ul>
+    {% for person in peopleList %}
+        <li><a href="/signin/people/{{ person.id }}/">{{ person.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No people yet.</p>
+{% endif %}
+
+<a href="/signin/createPerson.html">Add new people</a>
+
+{% endblock %}

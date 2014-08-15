@@ -1,0 +1,9 @@
+from django.conf.urls import patterns, url
+
+from signin import views
+
+urlpatterns = patterns('',
+    url(r'^$', views.index, name='index'),
+    url(r'^person/(?P<person_id>[0-9]+)/$', views.person, name='person'),
+    url(r'^createPerson.html$', views.createPerson, name='createPerson'),
+)

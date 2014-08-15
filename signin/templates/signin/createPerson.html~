@@ -1,0 +1,14 @@
+{% block title %}Add new neighbors{% endblock %}
+
+{% block content %}
+<h2>Add New Neighbors</h2>
+
+<form action="/signin/" method="post">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
